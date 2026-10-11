@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benna Kafe | Sıcak Bir Kahve Molası</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf8f6',
+                            100: '#fbe8e3',
+                            200: '#f5d3c8',
+                            600: '#b85d33',
+                            700: '#964825',
+                            800: '#7a391e',
+                            900: '#632e18',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-50 text-gray-800 font-sans antialiased">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl sm:text-3xl font-serif font-bold text-brand-700 tracking-wide">Benna Kafe</span>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium">
+                    <a href="#anasayfa" class="text-gray-700 hover:text-brand-600 transition">Ana Sayfa</a>
+                    <a href="#hakkimizda" class="text-gray-700 hover:text-brand-600 transition">Hakkımızda</a>
+                    <a href="#menu" class="text-gray-700 hover:text-brand-600 transition">Menü</a>
+                    <a href="#rezervasyon" class="text-gray-700 hover:text-brand-600 transition">Rezervasyon</a>
+                    <a href="#iletisim" class="text-gray-700 hover:text-brand-600 transition">İletişim</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#rezervasyon" class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full font-medium transition shadow-md hover:shadow-lg">Masa Ayırt</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700 focus:outline-none text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#anasayfa" class="block py-2 text-gray-700 hover:text-brand-600 font-medium">Ana Sayfa</a>
+            <a href="#hakkimizda" class="block py-2 text-gray-700 hover:text-brand-600 font-medium">Hakkımızda</a>
+            <a href="#menu" class="block py-2 text-gray-700 hover:text-brand-600 font-medium">Menü</a>
+            <a href="#rezervasyon" class="block py-2 text-gray-700 hover:text-brand-600 font-medium">Rezervasyon</a>
+            <a href="#iletisim" class="block py-2 text-gray-700 hover:text-brand-600 font-medium">İletişim</a>
+            <a href="#rezervasyon" class="block text-center mt-2 bg-brand-600 text-white py-2.5 rounded-full font-medium shadow">Masa Ayırt</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="anasayfa" class="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-br from-brand-100 via-brand-50 to-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center md:text-left">
+                    <span class="inline-block bg-brand-200/60 text-brand-800 text-sm font-semibold px-4 py-1.5 rounded-full">☕ En Samimi Kafe Deneyimi</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-gray-900 leading-tight">
+                        Benna Kafe'ye <span class="text-brand-600">Hoş Geldiniz</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 max-w-lg mx-auto md:mx-0">
+                        En taze çekirdek kahveler, el yapımı enfes tatlılar ve huzurlu atmosferimizle gününüze değer katıyoruz. Sizi de bu eşsiz lezzet yolculuğuna bekliyoruz.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-2">
+                        <a href="#menu" class="bg-brand-600 hover:bg-brand-700 text-white text-center px-8 py-3.5 rounded-full font-semibold transition shadow-md hover:shadow-lg">Menüyü İncele</a>
+                        <a href="#rezervasyon" class="border-2 border-brand-600 text-brand-700 hover:bg-brand-600 hover:text-white text-center px-8 py-3.5 rounded-full font-semibold transition">Hemen Yer Ayırt</a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="relative w-full max-w-md h-80 sm:h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=800" alt="Benna Kafe Atmosfer" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Badge Card -->
+                    <div class="absolute -bottom-6 -left-4 sm:left-4 bg-white p-4 rounded-xl shadow-xl flex items-center space-x-3 border border-gray-100">
+                        <div class="bg-brand-100 p-3 rounded-lg text-brand-700 text-xl">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-medium">Özel Harman</p>
+                            <p class="text-sm font-bold text-gray-800">%100 Arabica Kahve</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hakkımızda Section -->
+    <section id="hakkimizda" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&q=80&w=500" alt="Kahve Hazırlama" class="rounded-2xl shadow-md object-cover h-64 w-full">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=500" alt="Kafe İç Mekan" class="rounded-2xl shadow-md object-cover h-64 w-full mt-6">
+                </div>
+                <div class="space-y-6">
+                    <span class="text-brand-600 font-semibold tracking-wide uppercase text-sm">Hikayemiz</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-gray-900">Kahve Tutkumuz ve Samimi Atmosferimiz</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Benna Kafe olarak yola çıktığımız ilk günden beri amacımız sadece kahve sunmak değil; dostlukların kurulduğu, derslerin çalışıldığı, en güzel sohbetlerin edildiği sıcak bir yuva yaratmak.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Özenle seçilmiş kahve çekirdeklerimiz, günlük taze hazırlanan tatlılarımız ve güleryüzlü ekibimizle her ziyaretinizi unutulmaz kılmak için çalışıyoruz.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-700">25+</h3>
+                            <p class="text-xs text-gray-500 font-medium mt-1">Lezzet Çeşidi</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-700">100%</h3>
+                            <p class="text-xs text-gray-500 font-medium mt-1">Mutlu Müşteri</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-700">7/24</h3>
+                            <p class="text-xs text-gray-500 font-medium mt-1">Huzurlu Ortam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menü Section -->
+    <section id="menu" class="py-20 bg-brand-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-600 font-semibold tracking-wide uppercase text-sm">Lezzetlerimiz</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-gray-900 mt-2">Benna Kafe Menüsü</h2>
+                <p class="text-gray-600 mt-2">Damak tadınıza uygun en seçkin kahve ve tatlı çeşitlerimizi keşfedin.</p>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-2 mt-8">
+                    <button onclick="filterMenu('all')" class="menu-btn active px-5 py-2 rounded-full text-sm font-medium bg-brand-600 text-white shadow transition">Tümü</button>
+                    <button onclick="filterMenu('kahve')" class="menu-btn px-5 py-2 rounded-full text-sm font-medium bg-white text-gray-700 hover:bg-brand-100 shadow-sm transition">Kahveler</button>
+                    <button onclick="filterMenu('tatli')" class="menu-btn px-5 py-2 rounded-full text-sm font-medium bg-white text-gray-700 hover:bg-brand-100 shadow-sm transition">Tatlılar</button>
+                    <button onclick="filterMenu('icecek')" class="menu-btn px-5 py-2 rounded-full text-sm font-medium bg-white text-gray-700 hover:bg-brand-100 shadow-sm transition">Soğuk İçecekler</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Kahveler -->
+                <div class="menu-item kahve bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=600" alt="Espresso" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">Classic Espresso</h3>
+                            <span class="text-brand-700 font-bold text-lg">70 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Yoğun aromalı, taze çekilmiş tek shot espresso.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item kahve bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=600" alt="Caffe Latte" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">Caffè Latte</h3>
+                            <span class="text-brand-700 font-bold text-lg">95 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Yumuşak içimli espresso ve ipeksi buharla ısıtılmış süt.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item kahve bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&q=80&w=600" alt="Americano" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">Caffè Americano</h3>
+                            <span class="text-brand-700 font-bold text-lg">80 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Sıcak su ile yumuşatılmış zengin espresso lezzeti.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item kahve bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=600" alt="Cappuccino" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">Cappuccino</h3>
+                            <span class="text-brand-700 font-bold text-lg">95 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Eşit oranda espresso, sıcak süt ve yoğun süt köpüğü.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item kahve bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&q=80&w=600" alt="Flat White" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">Flat White</h3>
+                            <span class="text-brand-700 font-bold text-lg">100 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Çift shot ristretto ve mikro köpüklü Kadife dokulu süt.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item kahve bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=600" alt="Türk Kahvesi" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">Geleneksel Türk Kahvesi</h3>
+                            <span class="text-brand-700 font-bold text-lg">65 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Bol köpüklü, geleneksel bakır cezvede pişirilmiş Türk kahvesi.</p>
+                    </div>
+                </div>
+
+                <!-- Tatlılar -->
+                <div class="menu-item tatli bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&q=80&w=600" alt="Çikolatalı Brownie" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">Ev Yapımı Brownie</h3>
+                            <span class="text-brand-700 font-bold text-lg">110 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Bol çikolatalı, yanında vanilyalı dondurma ile servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item tatli bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&q=80&w=600" alt="Cheesecake" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">San Sebastian Cheesecake</h3>
+                            <span class="text-brand-700 font-bold text-lg">130 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">İçi akışkan, üzeri karamelize yanık kremsi doku ve erimiş çikolata.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item tatli bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&q=80&w=600" alt="Tiramisu" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">İtalyan Tiramisu</h3>
+                            <span class="text-brand-700 font-bold text-lg">115 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Mascarpone peyniri ve espressoya batırılmış kedidili keki.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item tatli bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&q=80&w=600" alt="Sıcak Çikolatalı Soufflé" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">Çikolatalı Sufle</h3>
+                            <span class="text-brand-700 font-bold text-lg">125 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Fırından taze çıkmış akışkan Belçika çikolatalı sufle.</p>
+                    </div>
+                </div>
+
+                <!-- Soğuk İçecekler -->
+                <div class="menu-item icecek bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=600" alt="Soğuk Kahve" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">Iced Caramel Macchiato</h3>
+                            <span class="text-brand-700 font-bold text-lg">105 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Buz, karamel sosu ve taze sütün muazzam uyumu.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item icecek bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&q=80&w=600" alt="Cold Brew" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">Cold Brew</h3>
+                            <span class="text-brand-700 font-bold text-lg">110 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">12 saat boyunca soğuk suda demlenmiş pürüzsüz kahve.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item icecek bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1523371054106-bbf80586c38c?auto=format&fit=crop&q=80&w=600" alt="Ev Yapımı Limonata" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">Taze Nane Limonata</h3>
+                            <span class="text-brand-700 font-bold text-lg">75 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Taze sıkılmış limon suyu, naneli buz taneleri ile ferahlatıcı lezzet.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item icecek bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&q=80&w=600" alt="Berry Hibiscus" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-serif font-bold text-xl text-gray-900">Berry Hibiscus Cool</h3>
+                            <span class="text-brand-700 font-bold text-lg">85 ₺</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Orman meyveleri ve hibiskus çayı özlü buzlu yaz içeceği.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rezervasyon Section -->
+    <section id="rezervasyon" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-brand-800 to-brand-900 rounded-3xl shadow-2xl overflow-hidden p-8 sm:p-12 text-white">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <span class="bg-brand-700/60 text-brand-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Hızlı İşlem</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold mt-2">Masa Rezervasyonu Yap</h2>
+                    <p class="text-brand-100 text-sm mt-2">Yerinizi şimdiden ayırtın, beklemek zorunda kalmayın.</p>
+                </div>
+
+                <form id="reservation-form" onsubmit="handleReservation(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Ad Soyad</label>
+                            <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-brand-200 focus:outline-none focus:border-white transition" placeholder="Adınız Soyadınız">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Telefon Numarası</label>
+                            <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-brand-200 focus:outline-none focus:border-white transition" placeholder="05XX XXX XX XX">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Tarih</label>
+                            <input type="date" id="date" required class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-white transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Saat</label>
+                            <input type="time" id="time" required class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:border-white transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Kişi Sayısı</label>
+                            <select id="guests" class="w-full px-4 py-3 rounded-xl bg-brand-900 border border-white/20 text-white focus:outline-none focus:border-white transition">
+                                <option value="1">1 Kişi</option>
+                                <option value="2" selected>2 Kişi</option>
+                                <option value="3">3 Kişi</option>
+                                <option value="4">4 Kişi</option>
+                                <option value="5+">5+ Kişilik</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Özel Notunuz (İsteğe bağlı)</label>
+                        <textarea id="note" rows="3" class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-brand-200 focus:outline-none focus:border-white transition" placeholder="Örn: Cam kenarı masa rica ederim..."></textarea>
+                    </div>
+                    <div class="text-center pt-2">
+                        <button type="submit" class="bg-white text-brand-900 hover:bg-brand-100 font-bold px-10 py-3.5 rounded-full shadow-lg transition duration-200">
+                            Rezervasyonu Onayla
+                        </button>
+                    </div>
+                </form>
+
+                <div id="success-message" class="hidden mt-6 p-4 bg-emerald-600/80 backdrop-blur text-white text-center rounded-xl font-medium">
+                    🎉 Rezervasyonunuz başarıyla kaydedilmiştir!
+                </div>
+
+                <!-- Kayıtlı Rezervasyonlar Listesi -->
+                <div class="mt-10 border-t border-white/20 pt-6">
+                    <h3 class="text-lg font-serif font-bold mb-4 text-brand-100 flex items-center justify-between">
+                        <span>Tarayıcıda Kayıtlı Rezervasyonlarım</span>
+                        <button onclick="clearReservations()" class="text-xs bg-red-600/60 hover:bg-red-600 text-white px-3 py-1 rounded transition">Temizle</button>
+                    </h3>
+                    <div id="reservation-list" class="space-y-3 max-h-60 overflow-y-auto pr-2">
+                        <!-- JavaScript ile dinamik dolacak -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim & Footer -->
+    <footer id="iletisim" class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-serif font-bold text-white">Benna Kafe</h3>
+                    <p class="text-sm text-gray-400">
+                        En lezzetli kahveler ve tatlılar eşliğinde keyifli vakit geçirmeniz için tasarlandı.
+                    </p>
+                    <div class="flex space-x-4 text-lg">
+                        <a href="#" class="text-gray-400 hover:text-brand-500 transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-500 transition"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-500 transition"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-lg font-bold text-white">Çalışma Saatleri</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex justify-between"><span>Pazartesi - Cuma:</span> <span class="text-white">08:00 - 23:00</span></li>
+                        <li class="flex justify-between"><span>Cumartesi - Pazar:</span> <span class="text-white">09:00 - 00:00</span></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-lg font-bold text-white">İletişim</h4>
+                    <p class="text-sm text-gray-400 flex items-center space-x-2"><i class="fa-solid fa-location-dot text-brand-500"></i> <span>Konak Mah. Atatürk Cad. No: 15, Bucak Merkez, Burdur</span></p>
+                    <p class="text-sm text-gray-400 flex items-center space-x-2"><i class="fa-solid fa-phone text-brand-500"></i> <span>+90 (248) 325 01 23</span></p>
+                    <p class="text-sm text-gray-400 flex items-center space-x-2"><i class="fa-solid fa-envelope text-brand-500"></i> <span>bennacafe15@gmail.com</span></p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+                <p>&copy; 2026 Benna Kafe. Tüm hakları saklıdır. Web Teknolojileri Projesi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Menu Filtering
+        function filterMenu(category) {
+            const items = document.querySelectorAll('.menu-item');
+            const buttons = document.querySelectorAll('.menu-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-600', 'text-white', 'shadow');
+                btn.classList.add('bg-white', 'text-gray-700', 'shadow-sm');
+            });
+
+            event.target.classList.remove('bg-white', 'text-gray-700', 'shadow-sm');
+            event.target.classList.add('bg-brand-600', 'text-white', 'shadow');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // LocalStorage Rezervasyon Yönetimi
+        document.addEventListener('DOMContentLoaded', displayReservations);
+
+        function handleReservation(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const guests = document.getElementById('guests').value;
+            const note = document.getElementById('note').value;
+
+            const newReservation = {
+                id: Date.now(),
+                name,
+                phone,
+                date,
+                time,
+                guests,
+                note
+            };
+
+            let reservations = JSON.parse(localStorage.getItem('benna_reservations')) || [];
+            reservations.push(newReservation);
+
+            localStorage.setItem('benna_reservations', JSON.stringify(reservations));
+
+            displayReservations();
+
+            const successMsg = document.getElementById('success-message');
+            successMsg.classList.remove('hidden');
+            document.getElementById('reservation-form').reset();
+            
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 5000);
+        }
+
+        function displayReservations() {
+            const listContainer = document.getElementById('reservation-list');
+            let reservations = JSON.parse(localStorage.getItem('benna_reservations')) || [];
+
+            if (reservations.length === 0) {
+                listContainer.innerHTML = '<p class="text-sm text-brand-200 italic">Henüz kayıtlı bir rezervasyon bulunmuyor.</p>';
+                return;
+            }
+
+            listContainer.innerHTML = '';
+            reservations.slice().reverse().forEach(res => {
+                const item = document.createElement('div');
+                item.className = 'bg-white/10 p-3 rounded-xl text-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border border-white/10';
+                item.innerHTML = `
+                    <div>
+                        <span class="font-bold text-white">${res.name}</span> (${res.guests} Kişi) <br>
+                        <span class="text-brand-200 text-xs"><i class="fa-regular fa-calendar"></i> ${res.date} - ${res.time} | <i class="fa-solid fa-phone"></i> ${res.phone}</span>
+                        ${res.note ? `<br><span class="text-xs text-yellow-200 italic">Not: ${res.note}</span>` : ''}
+                    </div>
+                `;
+                listContainer.appendChild(item);
+            });
+        }
+
+        function clearReservations() {
+            if (confirm('Tüm kayıtlı rezervasyonları silmek istediğinize emin misiniz?')) {
+                localStorage.removeItem('benna_reservations');
+                displayReservations();
+            }
+        }
+    </script>
+</body>
+</html>
